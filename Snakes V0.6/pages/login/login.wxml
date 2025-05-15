@@ -1,0 +1,38 @@
+<!--pages/login/login.wxml-->
+<view class="container">
+    <!-- 头部logo -->
+    <view class="header">
+        <!-- <image class="logo" src="/images/snake.png"></image> -->
+        <text class="title">贪吃蛇大作战</text>
+        <text class="subtitle">登录您的账号</text>
+    </view>
+
+    <!-- 表单区域 -->
+    <form bindsubmit="formSubmit" class="form">
+        <!-- 账号输入 -->
+        <view class="input-group">
+            <!-- <image class="input-icon" src="/images/user.png"></image> -->
+            <input name="username" placeholder="请输入账号" maxlength="20" focus class="input" type="text" />
+        </view>
+
+        <!-- 密码输入 -->
+        <view class="input-group">
+            <!-- <image class="input-icon" src="/images/lock.png"></image> -->
+            <input name="password" placeholder="请输入密码" password maxlength="20" class="input" />
+        </view>
+
+        <!-- 登录按钮 -->
+        <button formType="submit" class="login-btn" loading="{{loading}}">
+            登录
+        </button>
+    </form>
+
+    <!-- 辅助功能 -->
+    <view class="links">
+        <navigator url="/pages/register/register" class="link-container">
+            <text class="link-text">还没有账号？</text>
+            <text class="link-content">立即注册</text>
+            <text class="link-arrow">→</text>
+        </navigator>
+    </view>
+</view>

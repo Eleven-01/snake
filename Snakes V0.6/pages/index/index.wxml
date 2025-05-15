@@ -1,0 +1,31 @@
+<!--index.wxml-->
+<!-- 控制 -->
+<view class="control" bindtouchstart="tapStart" bindtouchmove="tapMove" bindtouchend="tapEnd">
+    <!-- 方向控制提示（半透明箭头，仅视觉引导） -->
+    <view class="control-arrow control-arrow-left"></view>
+    <view class="control-arrow control-arrow-right"></view>
+    <view class="control-arrow control-arrow-up"></view>
+    <view class="control-arrow control-arrow-down"></view>
+    <!-- 得分总览 -->
+    <view class="score">
+        <!-- 目前得分 -->
+        <view class="scoredetail">
+            <view class="scoredesc">得分</view>
+            <view class="scorenumber">{{score}}</view>
+        </view>
+        <!-- 历史最高分 -->
+        <view class="scoredetail">
+            <view class="scoredesc">历史最高</view>
+            <view class="scorenumber">{{maxscore}}</view>
+        </view>
+    </view>
+    <!-- 地图生成 -->
+    <view class="ground">
+        <view wx:for="{{ground}}" class="rows" wx:for-item="cols" wx:key="index">
+            <view wx:for="{{cols}}" class="block block_{{item}}" wx:key="index">
+            </view>
+        </view>
+    </view>
+    <!-- 暂停按钮 -->
+    <button class="pause-btn" bindtap="pauseGame">暂停</button>
+</view>

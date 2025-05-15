@@ -1,0 +1,40 @@
+<!--pages/register/register.wxml-->
+<view class="container">
+    <!-- 头部logo -->
+    <view class="header">
+        <!-- <image class="logo" src="/images/snake.png"></image> -->
+        <text class="title">贪吃蛇大作战</text>
+        <text class="subtitle">创建新账号</text>
+    </view>
+
+    <!-- 表单区域 -->
+    <form bindsubmit="formSubmit" class="form">
+        <!-- 账号输入 -->
+        <view class="input-group">
+            <!-- <image class="input-icon" src="/images/user.png"></image> -->
+            <input name="username" placeholder="请输入注册账号" maxlength="20" focus class="input" type="text" bindinput="onUsernameInput" />
+            <text wx:if="{{usernameError}}" class="error-text">{{usernameError}}</text>
+        </view>
+
+        <!-- 密码输入 -->
+        <view class="input-group">
+            <!-- <image class="input-icon" src="/images/lock.png"></image> -->
+            <input name="password" placeholder="请输入密码" password maxlength="20" class="input" bindinput="onPasswordInput" />
+            <text wx:if="{{passwordError}}" class="error-text">{{passwordError}}</text>
+        </view>
+
+        <!-- 注册按钮 -->
+        <button formType="submit" class="login-btn" loading="{{loading}}" disabled="{{!canSubmit}}">
+            注册
+        </button>
+    </form>
+
+    <!-- 辅助功能 -->
+    <view class="links">
+        <navigator url="/pages/login/login" class="link-container">
+            <text class="link-text">已有账号？</text>
+            <text class="link-content">返回登录</text>
+            <text class="link-arrow">←</text>
+        </navigator>
+    </view>
+</view>
